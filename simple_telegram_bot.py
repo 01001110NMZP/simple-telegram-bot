@@ -34,3 +34,21 @@ async def message_handler(update: Update, context) -> None:
 async def error(update: Update, context) -> None:
     """in the run terminal, shows what went wrong"""
     print(f"Update {update} has caused this error {context.error}")
+
+
+if __name__ == '__main__':
+
+    print("Starting ...")
+
+    app = Application.builder().token(TOKEN).build()
+
+    # Commands
+    app.add_handler(CommandHandler("start", start_command))
+
+    app.add_handler(MessageHandler(filters.TEXT, message_handler))
+
+    # Error
+    app.add_error_handler(error)
+
+    print("Polling ...")
+    app.run_polling(poll_interval=4)
