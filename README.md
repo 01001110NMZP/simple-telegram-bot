@@ -1,5 +1,5 @@
 # simple-telegram-bot
-autumn task - task No.4
+autumn task - task No.4 & No.6
 
 Disclaimer:
 
